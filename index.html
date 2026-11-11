@@ -1,1 +1,717 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAVAX MOTOS | Concessionária Exclusiva & Superesportivas de Luxo</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Montserrat & Cinzel -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            100: '#FFFDD0',
+                            300: '#F5D77F',
+                            400: '#E6C200',
+                            500: '#D4AF37',
+                            600: '#AA771C',
+                            700: '#85590E',
+                        },
+                        dark: {
+                            900: '#070708',
+                            800: '#0E0E11',
+                            700: '#16161C',
+                            600: '#22222B',
+                        }
+                    },
+                    fontFamily: {
+                        cinzel: ['Cinzel', 'serif'],
+                        montserrat: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #070708;
+            color: #E2E8F0;
+            overflow-x: hidden;
+        }
+
+        /* Gold Gradient Text */
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #BF953F 0%, #FCF6BA 25%, #B38728 50%, #FBF5B7 75%, #AA771C 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Metallic Gold Background Gradient */
+        .gold-gradient-bg {
+            background: linear-gradient(135deg, #D4AF37 0%, #FFD700 35%, #B38728 70%, #AA771C 100%);
+        }
+
+        /* Gold Metallic Border */
+        .gold-border {
+            border-image: linear-gradient(135deg, #D4AF37, #FBF5B7, #AA771C) 1;
+        }
+
+        /* Glowing Effects */
+        .gold-glow {
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.25);
+        }
+
+        .gold-glow-lg {
+            box-shadow: 0 0 45px rgba(212, 175, 55, 0.4);
+        }
+
+        .gold-glow-hover:hover {
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #070708;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #AA771C;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #D4AF37;
+        }
+
+        /* Glassmorphism Dark Card */
+        .glass-card {
+            background: rgba(22, 22, 28, 0.75);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(212, 175, 55, 0.18);
+        }
+
+        .glass-card:hover {
+            border-color: rgba(212, 175, 55, 0.5);
+        }
+
+        /* Keyframes for subtle ambient light */
+        @keyframes pulseGlow {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 0.6; transform: scale(1.08); }
+        }
+
+        .ambient-glow {
+            animation: pulseGlow 6s infinite ease-in-out;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-gold-500 selection:text-black">
+
+    <!-- Ambient Lighting Background Overlay -->
+    <div class="fixed top-0 left-1/4 w-[500px] h-[500px] bg-gold-500/10 rounded-full blur-[140px] pointer-events-none ambient-glow z-0"></div>
+    <div class="fixed bottom-10 right-10 w-[400px] h-[400px] bg-gold-600/10 rounded-full blur-[130px] pointer-events-none ambient-glow z-0"></div>
+
+    <!-- HEADER / NAVBAR -->
+    <header class="sticky top-0 z-50 bg-dark-900/90 backdrop-blur-md border-b border-gold-500/20 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-24 flex items-center justify-between">
+            
+            <!-- Logo -->
+            <a href="#" class="flex items-center space-x-3 group">
+                <div class="w-12 h-12 rounded-lg gold-gradient-bg flex items-center justify-center shadow-lg group-hover:rotate-6 transition-transform">
+                    <i class="fa-solid fa-motorcycle text-black text-2xl"></i>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-cinzel text-2xl font-black tracking-widest gold-gradient-text">CAVAX</span>
+                    <span class="text-[10px] tracking-[0.3em] font-semibold text-gray-400 uppercase -mt-1 group-hover:text-gold-400 transition-colors">MOTOS DE LUXO</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center space-x-8 font-medium text-sm tracking-wide">
+                <a href="#home" class="text-gold-400 hover:text-gold-300 transition-colors flex items-center gap-1.5">
+                    <i class="fa-solid fa-house text-xs"></i> Início
+                </a>
+                <a href="#catalogo" class="text-gray-300 hover:text-gold-400 transition-colors">Catálogo VIP</a>
+                <a href="#flagship" class="text-gray-300 hover:text-gold-400 transition-colors">Lançamento Gold</a>
+                <a href="#avaliacoes" class="text-gray-300 hover:text-gold-400 transition-colors">Avaliações</a>
+                <a href="#contato" class="text-gray-300 hover:text-gold-400 transition-colors">Showroom</a>
+            </nav>
+
+            <!-- CTA Button -->
+            <div class="hidden sm:flex items-center space-x-4">
+                <button onclick="openModal('Agendamento de Test Ride VIP')" class="gold-gradient-bg text-black font-bold text-xs uppercase tracking-widest px-6 py-3 rounded-md hover:brightness-110 transition-all transform hover:-translate-y-0.5 gold-glow">
+                    <i class="fa-solid fa-calendar-check mr-2"></i> Agendar VIP Test
+                </button>
+            </div>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-gold-400 text-2xl focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-dark-800 border-b border-gold-500/20 px-6 py-6 space-y-4">
+            <a href="#home" class="block text-gold-400 font-semibold py-1">Início</a>
+            <a href="#catalogo" class="block text-gray-300 hover:text-gold-400 py-1">Catálogo VIP</a>
+            <a href="#flagship" class="block text-gray-300 hover:text-gold-400 py-1">Lançamento Gold</a>
+            <a href="#avaliacoes" class="block text-gray-300 hover:text-gold-400 py-1">Avaliações</a>
+            <a href="#contato" class="block text-gray-300 hover:text-gold-400 py-1">Showroom</a>
+            <button onclick="openModal('Agendamento VIP Mobile')" class="w-full text-center gold-gradient-bg text-black font-bold text-xs uppercase tracking-widest py-3 rounded-md mt-2">
+                Agendar VIP Test
+            </button>
+        </div>
+    </header>
+
+    <!-- HERO SECTION SHOWCASE -->
+    <section id="home" class="relative min-h-[90vh] flex items-center justify-center pt-8 pb-16 px-4 overflow-hidden">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+            
+            <!-- Hero Text Content -->
+            <div class="lg:col-span-6 space-y-8 text-center lg:text-left">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-400 text-xs font-semibold uppercase tracking-widest">
+                    <i class="fa-solid fa-crown text-gold-400"></i> O Ápice da Engenharia Automotiva
+                </div>
+                
+                <h1 class="font-cinzel text-4xl sm:text-6xl font-extrabold tracking-tight text-white leading-tight">
+                    DOMINE AS ESTRADAS COM <span class="gold-gradient-text block mt-1">SOBERANIA & LUXO</span>
+                </h1>
+                
+                <p class="text-gray-400 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                    A <strong class="text-gold-400">Cavax Motos</strong> apresenta a seleção mais refinada de superesportivas e hiper-naked do planeta. Edições numeradas, acabamento artesanal em fibra de carbono e componentes folheados a ouro 24k.
+                </p>
+
+                <!-- Hero Performance Badges -->
+                <div class="grid grid-cols-3 gap-4 py-4 border-y border-gold-500/20 max-w-lg mx-auto lg:mx-0">
+                    <div class="text-center lg:text-left">
+                        <span class="block font-cinzel text-2xl sm:text-3xl font-bold text-gold-400">231 CV</span>
+                        <span class="text-xs text-gray-500 uppercase tracking-wider">Potência Máxima</span>
+                    </div>
+                    <div class="text-center lg:text-left border-x border-gold-500/20 px-2">
+                        <span class="block font-cinzel text-2xl sm:text-3xl font-bold text-gold-400">2.8s</span>
+                        <span class="text-xs text-gray-500 uppercase tracking-wider">0 a 100 km/h</span>
+                    </div>
+                    <div class="text-center lg:text-left">
+                        <span class="block font-cinzel text-2xl sm:text-3xl font-bold text-gold-400">315+</span>
+                        <span class="text-xs text-gray-500 uppercase tracking-wider">km/h Vel. Máx</span>
+                    </div>
+                </div>
+
+                <!-- Call to Action Buttons -->
+                <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                    <a href="#catalogo" class="w-full sm:w-auto text-center gold-gradient-bg text-black font-extrabold text-sm uppercase tracking-widest px-8 py-4 rounded-lg gold-glow-hover transition-all transform hover:-translate-y-1">
+                        Explorar Coleção VIP
+                    </a>
+                    <button onclick="openModal('Cavax Black Gold Flagship')" class="w-full sm:w-auto text-center bg-dark-700 hover:bg-dark-600 border border-gold-500/40 text-gold-300 font-bold text-sm uppercase tracking-widest px-8 py-4 rounded-lg transition-all">
+                        Solicitar Cotação
+                    </button>
+                </div>
+            </div>
+
+            <!-- Hero Image Banner -->
+            <div class="lg:col-span-6 relative">
+                <div class="relative mx-auto max-w-md lg:max-w-none">
+                    <!-- Gold Backdrop Glow -->
+                    <div class="absolute inset-0 bg-gold-500/20 rounded-full filter blur-3xl transform scale-75"></div>
+                    
+                    <!-- Flagship Bike Card Preview -->
+                    <div class="relative rounded-2xl overflow-hidden glass-card p-3 gold-glow">
+                        <img src="https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=1200&q=80" 
+                             alt="Cavax Black Gold Edition" 
+                             class="w-full h-[380px] sm:h-[450px] object-cover rounded-xl transition-transform duration-700 hover:scale-105"
+                             onerror="this.src='https://placehold.co/1200x800/121215/D4AF37?text=Cavax+Black+Gold+1000cc'"
+                        >
+                        <div class="absolute top-6 right-6 bg-black/80 backdrop-blur-md px-4 py-2 rounded-full border border-gold-500/50">
+                            <span class="text-xs font-bold gold-gradient-text uppercase tracking-widest">★ Edição Exclusiva #01/10</span>
+                        </div>
+                        <div class="p-4 flex justify-between items-center bg-dark-800/90 rounded-b-xl mt-2 border-t border-gold-500/20">
+                            <div>
+                                <h3 class="font-cinzel font-bold text-lg text-white">Cavax Black Gold 1000RR</h3>
+                                <p class="text-xs text-gray-400">Carbono Titanium & Acabamento Dourado</p>
+                            </div>
+                            <span class="font-cinzel text-xl font-extrabold text-gold-400">R$ 389.000</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRUST STATS BAR -->
+    <section class="bg-dark-800/80 border-y border-gold-500/20 py-8">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            <div class="p-4">
+                <i class="fa-solid fa-shield-halved text-2xl text-gold-400 mb-2"></i>
+                <h4 class="font-cinzel font-bold text-xl text-white">100% Homologadas</h4>
+                <p class="text-xs text-gray-400">Garantia Nacional & Suporte VIP</p>
+            </div>
+            <div class="p-4 border-l border-gold-500/10">
+                <i class="fa-solid fa-truck-fast text-2xl text-gold-400 mb-2"></i>
+                <h4 class="font-cinzel font-bold text-xl text-white">Entrega Blindada</h4>
+                <p class="text-xs text-gray-400">Em todo o território nacional</p>
+            </div>
+            <div class="p-4 border-l border-gold-500/10">
+                <i class="fa-solid fa-award text-2xl text-gold-400 mb-2"></i>
+                <h4 class="font-cinzel font-bold text-xl text-white">Custom Concierge</h4>
+                <p class="text-xs text-gray-400">Personalização Exclusiva Cavax</p>
+            </div>
+            <div class="p-4 border-l border-gold-500/10">
+                <i class="fa-solid fa-headset text-2xl text-gold-400 mb-2"></i>
+                <h4 class="font-cinzel font-bold text-xl text-white">Atendimento 24/7</h4>
+                <p class="text-xs text-gray-400">Gerente de Conta Dedicado</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- MOTORCYCLE CATALOG SECTION -->
+    <section id="catalogo" class="py-20 px-4 max-w-7xl mx-auto">
+        <!-- Section Title Header -->
+        <div class="text-center max-w-3xl mx-auto mb-14 space-y-3">
+            <h2 class="text-xs font-bold uppercase tracking-[0.3em] text-gold-400">Frota de Elite</h2>
+            <h3 class="font-cinzel text-3xl sm:text-5xl font-extrabold text-white">
+                CATÁLOGO DE <span class="gold-gradient-text">MOTOS DE LUXO</span>
+            </h3>
+            <div class="w-24 h-1 gold-gradient-bg mx-auto rounded-full mt-4"></div>
+            <p class="text-gray-400 text-sm sm:text-base pt-2">
+                Avalie os modelos dos seus sonhos. Interaja com curtidas e descurtidas para nos ajudar a trazer mais unidades da sua superesportiva favorita.
+            </p>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="flex flex-wrap items-center justify-center gap-3 mb-12">
+            <button onclick="filterBikes('all')" class="cat-btn active gold-gradient-bg text-black font-bold text-xs uppercase tracking-wider px-5 py-2.5 rounded-full transition-all">Todas</button>
+            <button onclick="filterBikes('superbike')" class="cat-btn bg-dark-700 hover:bg-dark-600 border border-gold-500/30 text-gray-300 font-bold text-xs uppercase tracking-wider px-5 py-2.5 rounded-full transition-all">Superbikes</button>
+            <button onclick="filterBikes('hypernaked')" class="cat-btn bg-dark-700 hover:bg-dark-600 border border-gold-500/30 text-gray-300 font-bold text-xs uppercase tracking-wider px-5 py-2.5 rounded-full transition-all">Hyper Naked</button>
+            <button onclick="filterBikes('custom')" class="cat-btn bg-dark-700 hover:bg-dark-600 border border-gold-500/30 text-gray-300 font-bold text-xs uppercase tracking-wider px-5 py-2.5 rounded-full transition-all">Custom & Touring</button>
+        </div>
+
+        <!-- Motorcycle Cards Grid -->
+        <div id="bike-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <!-- Card 1: Cavax Black Gold 1000RR -->
+            <div class="bike-card glass-card rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-2 flex flex-col justify-between" data-category="superbike">
+                <div>
+                    <div class="relative overflow-hidden group">
+                        <img src="https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&w=800&q=80" 
+                             alt="Cavax Black Gold 1000RR" 
+                             class="w-full h-60 object-cover transition-transform duration-500 group-hover:scale-110"
+                             onerror="this.src='https://placehold.co/800x600/121215/D4AF37?text=Cavax+1000RR'"
+                        >
+                        <span class="absolute top-4 left-4 bg-gold-500 text-black text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">Edição Cavax Gold</span>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-cinzel text-xl font-bold text-white mb-1">Cavax Black Gold 1000RR</h4>
+                        <p class="text-xs text-gold-400 font-semibold mb-4">Motor V4 998cc • 221 CV</p>
+                        
+                        <!-- Mini Specs -->
+                        <div class="grid grid-cols-3 gap-2 py-3 bg-dark-800/80 rounded-lg text-center text-xs text-gray-300 border border-gold-500/10 mb-4">
+                            <div><span class="block text-gray-500 text-[10px]">0-100 km/h</span><strong>2.8s</strong></div>
+                            <div><span class="block text-gray-500 text-[10px]">Peso</span><strong>168 kg</strong></div>
+                            <div><span class="block text-gray-500 text-[10px]">Torque</span><strong>12.6 kgfm</strong></div>
+                        </div>
+
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs text-gray-400">Preço Estimado</span>
+                            <span class="font-cinzel text-xl font-extrabold text-gold-400">R$ 389.000</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Like / Dislike Bar & CTA -->
+                <div class="p-6 pt-0 border-t border-gold-500/10 mt-4">
+                    <div class="flex items-center justify-between mb-4 pt-4">
+                        <span class="text-xs text-gray-400">Opinião da Comunidade:</span>
+                        <div class="flex items-center space-x-3">
+                            <!-- Like Button -->
+                            <button onclick="handleLike(1)" id="like-btn-1" class="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-dark-700 hover:bg-gold-500/20 border border-gold-500/30 text-gray-300 hover:text-gold-400 transition-colors">
+                                <i class="fa-solid fa-thumbs-up text-xs"></i>
+                                <span id="like-count-1" class="text-xs font-bold">142</span>
+                            </button>
+                            <!-- Dislike Button -->
+                            <button onclick="handleDislike(1)" id="dislike-btn-1" class="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-dark-700 hover:bg-red-500/20 border border-red-500/30 text-gray-300 hover:text-red-400 transition-colors">
+                                <i class="fa-solid fa-thumbs-down text-xs"></i>
+                                <span id="dislike-count-1" class="text-xs font-bold">4</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <button onclick="openModal('Cavax Black Gold 1000RR')" class="w-full text-center gold-gradient-bg text-black font-bold text-xs uppercase tracking-widest py-3 rounded-lg hover:brightness-110 transition-all gold-glow-hover">
+                        <i class="fa-solid fa-envelope-open-text mr-2"></i> Tenho Interesse / Cotação
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 2: Ducati Panigale V4 R -->
+            <div class="bike-card glass-card rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-2 flex flex-col justify-between" data-category="superbike">
+                <div>
+                    <div class="relative overflow-hidden group">
+                        <img src="https://images.unsplash.com/photo-1558980664-769d59546b3d?auto=format&fit=crop&w=800&q=80" 
+                             alt="Ducati Panigale V4 R" 
+                             class="w-full h-60 object-cover transition-transform duration-500 group-hover:scale-110"
+                             onerror="this.src='https://placehold.co/800x600/121215/D4AF37?text=Ducati+Panigale+V4R'"
+                        >
+                        <span class="absolute top-4 left-4 bg-red-600 text-white text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">Pronta Entrega</span>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-cinzel text-xl font-bold text-white mb-1">Ducati Panigale V4 R</h4>
+                        <p class="text-xs text-gold-400 font-semibold mb-4">Desmosedici Stradale R • 240 CV</p>
+                        
+                        <div class="grid grid-cols-3 gap-2 py-3 bg-dark-800/80 rounded-lg text-center text-xs text-gray-300 border border-gold-500/10 mb-4">
+                            <div><span class="block text-gray-500 text-[10px]">0-100 km/h</span><strong>2.7s</strong></div>
+                            <div><span class="block text-gray-500 text-[10px]">Peso</span><strong>172 kg</strong></div>
+                            <div><span class="block text-gray-500 text-[10px]">Torque</span><strong>11.4 kgfm</strong></div>
+                        </div>
+
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs text-gray-400">Preço Oficial</span>
+                            <span class="font-cinzel text-xl font-extrabold text-gold-400">R$ 330.000</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-6 pt-0 border-t border-gold-500/10 mt-4">
+                    <div class="flex items-center justify-between mb-4 pt-4">
+                        <span class="text-xs text-gray-400">Opinião da Comunidade:</span>
+                        <div class="flex items-center space-x-3">
+                            <button onclick="handleLike(2)" id="like-btn-2" class="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-dark-700 hover:bg-gold-500/20 border border-gold-500/30 text-gray-300 hover:text-gold-400 transition-colors">
+                                <i class="fa-solid fa-thumbs-up text-xs"></i>
+                                <span id="like-count-2" class="text-xs font-bold">218</span>
+                            </button>
+                            <button onclick="handleDislike(2)" id="dislike-btn-2" class="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-dark-700 hover:bg-red-500/20 border border-red-500/30 text-gray-300 hover:text-red-400 transition-colors">
+                                <i class="fa-solid fa-thumbs-down text-xs"></i>
+                                <span id="dislike-count-2" class="text-xs font-bold">7</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <button onclick="openModal('Ducati Panigale V4 R')" class="w-full text-center gold-gradient-bg text-black font-bold text-xs uppercase tracking-widest py-3 rounded-lg hover:brightness-110 transition-all gold-glow-hover">
+                        <i class="fa-solid fa-envelope-open-text mr-2"></i> Tenho Interesse / Cotação
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 3: BMW M 1000 RR Competition -->
+            <div class="bike-card glass-card rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-2 flex flex-col justify-between" data-category="superbike">
+                <div>
+                    <div class="relative overflow-hidden group">
+                        <img src="https://images.unsplash.com/photo-1609630928812-d195d76c4f8f?auto=format&fit=crop&w=800&q=80" 
+                             alt="BMW M 1000 RR" 
+                             class="w-full h-60 object-cover transition-transform duration-500 group-hover:scale-110"
+                             onerror="this.src='https://placehold.co/800x600/121215/D4AF37?text=BMW+M1000RR'"
+                        >
+                        <span class="absolute top-4 left-4 bg-blue-600 text-white text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">M Motorsport</span>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-cinzel text-xl font-bold text-white mb-1">BMW M 1000 RR</h4>
+                        <p class="text-xs text-gold-400 font-semibold mb-4">ShiftCam Inline 4 • 212 CV</p>
+                        
+                        <div class="grid grid-cols-3 gap-2 py-3 bg-dark-800/80 rounded-lg text-center text-xs text-gray-300 border border-gold-500/10 mb-4">
+                            <div><span class="block text-gray-500 text-[10px]">0-100 km/h</span><strong>2.9s</strong></div>
+                            <div><span class="block text-gray-500 text-[10px]">Peso</span><strong>170 kg</strong></div>
+                            <div><span class="block text-gray-500 text-[10px]">Torque</span><strong>11.5 kgfm</strong></div>
+                        </div>
+
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs text-gray-400">Preço Oficial</span>
+                            <span class="font-cinzel text-xl font-extrabold text-gold-400">R$ 298.000</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-6 pt-0 border-t border-gold-500/10 mt-4">
+                    <div class="flex items-center justify-between mb-4 pt-4">
+                        <span class="text-xs text-gray-400">Opinião da Comunidade:</span>
+                        <div class="flex items-center space-x-3">
+                            <button onclick="handleLike(3)" id="like-btn-3" class="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-dark-700 hover:bg-gold-500/20 border border-gold-500/30 text-gray-300 hover:text-gold-400 transition-colors">
+                                <i class="fa-solid fa-thumbs-up text-xs"></i>
+                                <span id="like-count-3" class="text-xs font-bold">185</span>
+                            </button>
+                            <button onclick="handleDislike(3)" id="dislike-btn-3" class="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-dark-700 hover:bg-red-500/20 border border-red-500/30 text-gray-300 hover:text-red-400 transition-colors">
+                                <i class="fa-solid fa-thumbs-down text-xs"></i>
+                                <span id="dislike-count-3" class="text-xs font-bold">3</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <button onclick="openModal('BMW M 1000 RR')" class="w-full text-center gold-gradient-bg text-black font-bold text-xs uppercase tracking-widest py-3 rounded-lg hover:brightness-110 transition-all gold-glow-hover">
+                        <i class="fa-solid fa-envelope-open-text mr-2"></i> Tenho Interesse / Cotação
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 4: Kawasaki Ninja H2 Carbon Supercharged -->
+            <div class="bike-card glass-card rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-2 flex flex-col justify-between" data-category="hypernaked">
+                <div>
+                    <div class="relative overflow-hidden group">
+                        <img src="https://images.unsplash.com/photo-1547549082-6bc09f2049ae?auto=format&fit=crop&w=800&q=80" 
+                             alt="Kawasaki Ninja H2 Carbon" 
+                             class="w-full h-60 object-cover transition-transform duration-500 group-hover:scale-110"
+                             onerror="this.src='https://placehold.co/800x600/121215/D4AF37?text=Ninja+H2+Carbon'"
+                        >
+                        <span class="absolute top-4 left-4 bg-emerald-600 text-white text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">Supercharged</span>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-cinzel text-xl font-bold text-white mb-1">Kawasaki Ninja H2 Carbon</h4>
+                        <p class="text-xs text-gold-400 font-semibold mb-4">Compressor Volumétrico • 231 CV</p>
+                        
+                        <div class="grid grid-cols-3 gap-2 py-3 bg-dark-800/80 rounded-lg text-center text-xs text-gray-300 border border-gold-500/10 mb-4">
+                            <div><span class="block text-gray-500 text-[10px]">0-100 km/h</span><strong>2.6s</strong></div>
+                            <div><span class="block text-gray-500 text-[10px]">Peso</span><strong>238 kg</strong></div>
+                            <div><span class="block text-gray-500 text-[10px]">Torque</span><strong>14.4 kgfm</strong></div>
+                        </div>
+
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs text-gray-400">Preço Oficial</span>
+                            <span class="font-cinzel text-xl font-extrabold text-gold-400">R$ 355.000</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-6 pt-0 border-t border-gold-500/10 mt-4">
+                    <div class="flex items-center justify-between mb-4 pt-4">
+                        <span class="text-xs text-gray-400">Opinião da Comunidade:</span>
+                        <div class="flex items-center space-x-3">
+                            <button onclick="handleLike(4)" id="like-btn-4" class="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-dark-700 hover:bg-gold-500/20 border border-gold-500/30 text-gray-300 hover:text-gold-400 transition-colors">
+                                <i class="fa-solid fa-thumbs-up text-xs"></i>
+                                <span id="like-count-4" class="text-xs font-bold">310</span>
+                            </button>
+                            <button onclick="handleDislike(4)" id="dislike-btn-4" class="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-dark-700 hover:bg-red-500/20 border border-red-500/30 text-gray-300 hover:text-red-400 transition-colors">
+                                <i class="fa-solid fa-thumbs-down text-xs"></i>
+                                <span id="dislike-count-4" class="text-xs font-bold">12</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <button onclick="openModal('Kawasaki Ninja H2 Carbon')" class="w-full text-center gold-gradient-bg text-black font-bold text-xs uppercase tracking-widest py-3 rounded-lg hover:brightness-110 transition-all gold-glow-hover">
+                        <i class="fa-solid fa-envelope-open-text mr-2"></i> Tenho Interesse / Cotação
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 5: Harley-Davidson CVO Street Glide -->
+            <div class="bike-card glass-card rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-2 flex flex-col justify-between" data-category="custom">
+                <div>
+                    <div class="relative overflow-hidden group">
+                        <img src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=800&q=80" 
+                             alt="Harley Davidson CVO Street Glide" 
+                             class="w-full h-60 object-cover transition-transform duration-500 group-hover:scale-110"
+                             onerror="this.src='https://placehold.co/800x600/121215/D4AF37?text=Harley+CVO'"
+                        >
+                        <span class="absolute top-4 left-4 bg-orange-600 text-white text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">Custom CVO</span>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-cinzel text-xl font-bold text-white mb-1">Harley CVO Street Glide</h4>
+                        <p class="text-xs text-gold-400 font-semibold mb-4">Milwaukee-Eight 121 VVT • 115 CV</p>
+                        
+                        <div class="grid grid-cols-3 gap-2 py-3 bg-dark-800/80 rounded-lg text-center text-xs text-gray-300 border border-gold-500/10 mb-4">
+                            <div><span class="block text-gray-500 text-[10px]">Cilindrada</span><strong>1.977cc</strong></div>
+                            <div><span class="block text-gray-500 text-[10px]">Peso</span><strong>380 kg</strong></div>
+                            <div><span class="block text-gray-500 text-[10px]">Torque</span><strong>18.6 kgfm</strong></div>
+                        </div>
+
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs text-gray-400">Preço Oficial</span>
+                            <span class="font-cinzel text-xl font-extrabold text-gold-400">R$ 285.000</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-6 pt-0 border-t border-gold-500/10 mt-4">
+                    <div class="flex items-center justify-between mb-4 pt-4">
+                        <span class="text-xs text-gray-400">Opinião da Comunidade:</span>
+                        <div class="flex items-center space-x-3">
+                            <button onclick="handleLike(5)" id="like-btn-5" class="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-dark-700 hover:bg-gold-500/20 border border-gold-500/30 text-gray-300 hover:text-gold-400 transition-colors">
+                                <i class="fa-solid fa-thumbs-up text-xs"></i>
+                                <span id="like-count-5" class="text-xs font-bold">164</span>
+                            </button>
+                            <button onclick="handleDislike(5)" id="dislike-btn-5" class="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-dark-700 hover:bg-red-500/20 border border-red-500/30 text-gray-300 hover:text-red-400 transition-colors">
+                                <i class="fa-solid fa-thumbs-down text-xs"></i>
+                                <span id="dislike-count-5" class="text-xs font-bold">5</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <button onclick="openModal('Harley CVO Street Glide')" class="w-full text-center gold-gradient-bg text-black font-bold text-xs uppercase tracking-widest py-3 rounded-lg hover:brightness-110 transition-all gold-glow-hover">
+                        <i class="fa-solid fa-envelope-open-text mr-2"></i> Tenho Interesse / Cotação
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 6: MV Agusta Rush 1000 -->
+            <div class="bike-card glass-card rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-2 flex flex-col justify-between" data-category="hypernaked">
+                <div>
+                    <div class="relative overflow-hidden group">
+                        <img src="https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&w=800&q=80" 
+                             alt="MV Agusta Rush 1000" 
+                             class="w-full h-60 object-cover transition-transform duration-500 group-hover:scale-110"
+                             onerror="this.src='https://placehold.co/800x600/121215/D4AF37?text=MV+Agusta+Rush'"
+                        >
+                        <span class="absolute top-4 left-4 bg-purple-700 text-white text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">Obra de Arte</span>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-cinzel text-xl font-bold text-white mb-1">MV Agusta Rush 1000</h4>
+                        <p class="text-xs text-gold-400 font-semibold mb-4">Quatro Cilindros Titanio • 208 CV</p>
+                        
+                        <div class="grid grid-cols-3 gap-2 py-3 bg-dark-800/80 rounded-lg text-center text-xs text-gray-300 border border-gold-500/10 mb-4">
+                            <div><span class="block text-gray-500 text-[10px]">0-100 km/h</span><strong>2.9s</strong></div>
+                            <div><span class="block text-gray-500 text-[10px]">Peso</span><strong>186 kg</strong></div>
+                            <div><span class="block text-gray-500 text-[10px]">Torque</span><strong>11.9 kgfm</strong></div>
+                        </div>
+
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs text-gray-400">Preço Oficial</span>
+                            <span class="font-cinzel text-xl font-extrabold text-gold-400">R$ 340.000</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-6 pt-0 border-t border-gold-500/10 mt-4">
+                    <div class="flex items-center justify-between mb-4 pt-4">
+                        <span class="text-xs text-gray-400">Opinião da Comunidade:</span>
+                        <div class="flex items-center space-x-3">
+                            <button onclick="handleLike(6)" id="like-btn-6" class="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-dark-700 hover:bg-gold-500/20 border border-gold-500/30 text-gray-300 hover:text-gold-400 transition-colors">
+                                <i class="fa-solid fa-thumbs-up text-xs"></i>
+                                <span id="like-count-6" class="text-xs font-bold">204</span>
+                            </button>
+                            <button onclick="handleDislike(6)" id="dislike-btn-6" class="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-dark-700 hover:bg-red-500/20 border border-red-500/30 text-gray-300 hover:text-red-400 transition-colors">
+                                <i class="fa-solid fa-thumbs-down text-xs"></i>
+                                <span id="dislike-count-6" class="text-xs font-bold">2</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <button onclick="openModal('MV Agusta Rush 1000')" class="w-full text-center gold-gradient-bg text-black font-bold text-xs uppercase tracking-widest py-3 rounded-lg hover:brightness-110 transition-all gold-glow-hover">
+                        <i class="fa-solid fa-envelope-open-text mr-2"></i> Tenho Interesse / Cotação
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- HIGHLIGHT BANNER FEATURE -->
+    <section id="flagship" class="py-16 bg-gradient-to-r from-dark-900 via-dark-800 to-dark-900 border-y border-gold-500/20 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+            <div class="space-y-6">
+                <span class="text-xs font-bold uppercase tracking-[0.2em] text-gold-400"><i class="fa-solid fa-wand-magic-sparkles mr-1"></i> Serviço de Customização Cavax Gold</span>
+                <h3 class="font-cinzel text-3xl sm:text-4xl font-extrabold text-white">SUA MOTO EXCLUSIVA COMO UMA JOIA</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                    Nossa oficina de customização premium oferece banho de ouro 24k em parafusos e escapamentos, pintura personalizada sob demanda, bancos de couro nobre costurado à mão e remapeamento exclusivo de central eletrônica para pistas.
+                </p>
+                <div class="flex items-center space-x-6 text-xs text-gold-300 font-semibold">
+                    <span class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-400"></i> Fibra de Carbono Seca</span>
+                    <span class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-400"></i> Garantia Integral</span>
+                </div>
+            </div>
+            <div class="relative rounded-xl overflow-hidden border border-gold-500/30 shadow-2xl">
+                <img src="https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=800&q=80" alt="Customização Dourada" class="w-full h-80 object-cover" onerror="this.src='https://placehold.co/800x600/121215/D4AF37?text=Custom+Gold+Details'">
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80 flex items-end p-6">
+                    <p class="text-white font-cinzel text-sm font-bold">Solicite seu projeto de personalização exclusivo durante a compra.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- REVIEWS & COMMENTS SECTION -->
+    <section id="avaliacoes" class="py-20 px-4 max-w-7xl mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+            <h2 class="text-xs font-bold uppercase tracking-[0.3em] text-gold-400">Vozes dos Proprietários</h2>
+            <h3 class="font-cinzel text-3xl sm:text-5xl font-extrabold text-white">
+                AVALIAÇÕES & <span class="gold-gradient-text">DEPOIMENTOS</span>
+            </h3>
+            <div class="w-24 h-1 gold-gradient-bg mx-auto rounded-full mt-4"></div>
+            <p class="text-gray-400 text-sm sm:text-base pt-2">
+                Confira a experiência de quem já viveu a emoção de pilotar uma máquina Cavax Motos. Adicione seu próprio comentário.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+
+            <!-- Left Column: Rating Overview & Comment Form -->
+            <div class="lg:col-span-5 space-y-8">
+                
+                <!-- Overall Score Box -->
+                <div class="glass-card p-6 rounded-2xl border border-gold-500/20 text-center">
+                    <span class="text-xs text-gray-400 uppercase tracking-widest font-semibold block mb-2">Média de Satisfação dos Clientes</span>
+                    <div class="flex items-center justify-center space-x-3 mb-2">
+                        <span class="font-cinzel text-5xl font-black gold-gradient-text">4.9</span>
+                        <div class="text-left">
+                            <div class="flex text-gold-400 text-sm">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <span id="total-reviews-count" class="text-xs text-gray-400">Baseado em 128 avaliações</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Comment Form -->
+                <div class="glass-card p-6 rounded-2xl border border-gold-500/20">
+                    <h4 class="font-cinzel text-xl font-bold text-white mb-4 flex items-center gap-2">
+                        <i class="fa-solid fa-pen-to-square text-gold-400"></i> Deixar sua Avaliação
+                    </h4>
+
+                    <form id="comment-form" onsubmit="submitComment(event)" class="space-y-4">
+                        <div>
+                            <label class="block text-xs text-gray-400 uppercase tracking-wider mb-1 font-medium">Seu Nome Completo</label>
+                            <input type="text" id="author-name" required placeholder="Ex: Dr. Roberto Alcantara" class="w-full bg-dark-900 border border-gold-500/20 rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none focus:border-gold-400 transition-colors">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs text-gray-400 uppercase tracking-wider mb-1 font-medium">Moto de Interesse / Adquirida</label>
+                            <select id="bike-select" class="w-full bg-dark-900 border border-gold-500/20 rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none focus:border-gold-400 transition-colors">
+                                <option value="Cavax Black Gold 1000RR">Cavax Black Gold 1000RR</option>
+                                <option value="Ducati Panigale V4 R">Ducati Panigale V4 R</option>
+                                <option value="BMW M 1000 RR">BMW M 1000 RR</option>
+                                <option value="Kawasaki Ninja H2 Carbon">Kawasaki Ninja H2 Carbon</option>
+                                <option value="Harley CVO Street Glide">Harley CVO Street Glide</option>
+                                <option value="MV Agusta Rush 1000">MV Agusta Rush 1000</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs text-gray-400 uppercase tracking-wider mb-2 font-medium">Sua Nota (1 a 5 Estrelas)</label>
+                            <div class="flex items-center space-x-2" id="star-rating-selector">
+                                <i onclick="setRating(1)" class="star-choice fa-solid fa-star text-2xl text-gold-400 cursor-pointer transition-transform hover:scale-125"></i>
+                                <i onclick="setRating(2)" class="star-choice fa-solid fa-star text-2xl text-gold-400 cursor-pointer transition-transform hover:scale-125"></i>
+                                <i onclick="setRating(3)" class="star-choice fa-solid fa-star text-2xl text-gold-400 cursor-pointer transition-transform hover:scale-125"></i>
+                                <i onclick="setRating(4)" class="star-choice fa-solid fa-star text-2xl text-gold-400 cursor-pointer transition-transform hover:scale-125"></i>
+                                <i onclick="setRating(5)" class="star-choice fa-solid fa-star text-2xl text-gold-400 cursor-pointer transition-transform hover:scale-125"></i>
+                            </div>
+                            <input type="hidden" id="selected-rating" value="5">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs text-gray-400 uppercase tracking-wider mb-1 font-medium">Seu Comentário ou Depoimento</label>
+                            <textarea id="comment-text" rows="4" required placeholder="Conte em detalhes sobre o atendimento, entrega ou o desempenho da sua moto..." class="w-full bg-dark-900 border border-gold-500/20 rounded-lg p-3 text-sm text-white focus:outline-none focus:border-gold-400 transition-colors"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full gold-gradient-bg text-black font-extrabold text-xs uppercase tracking-widest py-3.5 rounded-lg hover:brightness-110 transition-all gold-glow">
+                            Publicar Avaliação VIP
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+
+            <!-- Right Column: Organized Comments List with Filters -->
+            <div class="lg:col-span-7 space-y-6">
+                
+                <!-- Comment Filters Bar -->
+                <div class="flex flex-wrap items-center justify-between gap-4 pb-4 border-b border-gold-500/20">
+                    <span class="text-xs text-gray-400 font-semibold uppercase tracking
